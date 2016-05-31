@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="DragonAsia.SalesMan.View.CustomerDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400" Background="Gray">
+
+    <Border Style="{StaticResource dialogBorderStyle}">
+        <StackPanel>
+            <!-- header -->
+            <Grid>
+                <TextBlock Style="{StaticResource dialogHeaderTextBlockStyle}" 
+                           Visibility="{Binding IsNew, Converter={StaticResource cnvVisibility}}"
+                           Text="New Customer" />
+                <TextBlock Style="{StaticResource dialogHeaderTextBlockStyle}"
+                           Visibility="{Binding IsCur, Converter={StaticResource cnvVisibility}}"
+                           Text="Edit Customer" />
+            </Grid>
+            <Separator Style="{StaticResource dialogHeaderSeparatorStyle}" />
+
+            <!-- content -->
+            <DockPanel LastChildFill="True">
+                <TextBlock Style="{StaticResource labelTextBlockStyle}" Text="Name"/>
+                <xctk:WatermarkTextBox Style="{StaticResource textBoxStyle}"
+                                       Watermark="John Doe"
+                                       Text="{Binding Entity.Name}"/>
+            </DockPanel>
+            <DockPanel LastChildFill="True">
+                <TextBlock Style="{StaticResource labelTextBlockStyle}" Text="Email"/>
+                <xctk:WatermarkTextBox Style="{StaticResource textBoxStyle}"
+                                       Watermark="john.doe@sample.com"
+                                       Text="{Binding Entity.Email}"/>
+            </DockPanel>
+            <DockPanel LastChildFill="True">
+                <TextBlock Style="{StaticResource labelTextBlockStyle}" Text="Phone"/>
+                <xctk:WatermarkTextBox Style="{StaticResource textBoxStyle}"
+                                       Watermark="1234-5678"
+                                       Text="{Binding Entity.Phone}"/>
+            </DockPanel>
+            <DockPanel LastChildFill="True">
+                <TextBlock Style="{StaticResource labelTextBlockStyle}" Text="Address"/>
+                <xctk:WatermarkTextBox Style="{StaticResource textBoxStyle}"
+                                       Watermark="Schulstrasse 4, 32547 Bad Oyenhausen"
+                                       Text="{Binding Entity.Address}"/>
+            </DockPanel>
+            
+            <!-- tasks -->
+            <Grid Margin="0 30 0 0">
+                <Border Style="{StaticResource buttonBorderStyle}" HorizontalAlignment="Right">
+                    <TextBlock Style="{StaticResource buttonTextBlockStyle}">
+                        <Hyperlink Style="{StaticResource hyperlinkStyle}" Command="{Binding CmdConfirm}">Confirm</Hyperlink>
+                    </TextBlock>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Border>
+</UserControl>

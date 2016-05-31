@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="DragonAsia.SalesMan.View.CustomerManagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             DataContext="{Binding Source={StaticResource Locator}, Path=CustomerManagerVM}"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="tplEntity">
+            <Grid Margin="0 2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Style="{StaticResource entry1stTextBlockStyle}" Width="50" Text="{Binding Guid}" />
+                    <TextBlock Style="{StaticResource entry2ndTextBlockStyle}" Text="{Binding Name}" />
+                </StackPanel>
+                
+                <TextBlock Style="{StaticResource entry3rdTextBlockStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding Phone}" />
+            </Grid>
+        </DataTemplate>
+
+        <ControlTemplate x:Key="tplGroupItem" TargetType="GroupItem">
+            <StackPanel>
+                <Grid Margin="0 15 0 5">
+                    <TextBlock Style="{StaticResource groupHeaderTextBlockStyle}" Text="{Binding Name}" />
+                    <TextBlock Style="{StaticResource groupItemCountTextBlockStyle}" />
+                </Grid>
+                <Separator Style="{StaticResource groupHeaderSeparatorStyle}"/>
+                <ItemsPresenter />
+            </StackPanel>
+        </ControlTemplate>
+
+        <CollectionViewSource x:Key="items" Source="{Binding FilteredEntities}">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Group"/>
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <!-- header -->
+        <TextBlock Style="{StaticResource headerTextBlockStyle}" Text="Customers" />
+        <Separator Style="{StaticResource headerSeparatorStyle}" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- entries -->
+            <StackPanel Grid.Column="0">
+                <xctk:WatermarkTextBox Style="{StaticResource searchTextBoxStyle}" />
+
+                <ListBox Style="{StaticResource listBoxStyle}"
+                         ItemsSource="{Binding Source={StaticResource items}}"
+                         ItemTemplate="{StaticResource tplEntity}"
+                         SelectedItem="{Binding Entity}">
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="GroupItem">
+                                    <Setter Property="Template" Value="{StaticResource tplGroupItem}"/>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                </ListBox>
+            </StackPanel>
+
+            <Border Grid.Column="1" Style="{StaticResource verticalBorderStyle}" />
+
+            <!-- tasks -->
+            <Border Grid.Column="2" Style="{StaticResource taskBorderStyle}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource pointBorderStyle}" />
+                        <TextBlock Style="{StaticResource taskTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource hyperlinkStyle}" Command="{Binding CmdAdd}">New Customer</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource pointBorderStyle}" />
+                        <TextBlock Style="{StaticResource taskTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource hyperlinkStyle}" Command="{Binding CmdEdit}">Edit Customer</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource pointBorderStyle}" />
+                        <TextBlock Style="{StaticResource taskTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource hyperlinkStyle}" Command="{Binding CmdDelete}">Delete Customer</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </StackPanel>
+</UserControl>
