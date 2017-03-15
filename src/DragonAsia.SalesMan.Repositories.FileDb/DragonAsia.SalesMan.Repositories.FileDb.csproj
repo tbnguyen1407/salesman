@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55DB79CA-4A6C-4B91-8247-E24A1F8290BF}</ProjectGuid>
+    <ProjectGuid>{09DE5518-D095-40B7-B10E-81E1688E8AFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DragonAsia.SalesMan.Models</RootNamespace>
-    <AssemblyName>DragonAsia.SalesMan.Models</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>DragonAsia.SalesMan.Repositories.FileDb</RootNamespace>
+    <AssemblyName>DragonAsia.SalesMan.Repositories.FileDb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\out\compile\DragonAsia.SalesMan.Models\</OutputPath>
+    <OutputPath>..\..\out\compile\DragonAsia.SalesMan.Repositories.FileDb\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\out\compile\DragonAsia.SalesMan.Models\</OutputPath>
+    <OutputPath>..\..\out\compile\DragonAsia.SalesMan.Repositories.FileDb\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -37,10 +37,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="CustomerRepository.cs" />
+    <Compile Include="IoHelper.cs" />
+    <Compile Include="ItemRepository.cs" />
+    <Compile Include="OrderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DragonAsia.SalesMan.Models\DragonAsia.SalesMan.Models.csproj">
+      <Project>{55db79ca-4a6c-4b91-8247-e24a1f8290bf}</Project>
+      <Name>DragonAsia.SalesMan.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DragonAsia.SalesMan.Repositories.Abstractions\DragonAsia.SalesMan.Repositories.Abstractions.csproj">
+      <Project>{39cf48ad-e6ce-4c11-be73-6c78d0094507}</Project>
+      <Name>DragonAsia.SalesMan.Repositories.Abstractions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.1-beta1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
