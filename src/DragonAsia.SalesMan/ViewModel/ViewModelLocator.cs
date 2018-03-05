@@ -1,6 +1,6 @@
+using CommonServiceLocator;
 using DragonAsia.SalesMan.Repositories;
 using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
 
 namespace DragonAsia.SalesMan.ViewModel
 {
