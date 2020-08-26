@@ -2,12 +2,7 @@
 SETLOCAL EnableDelayedExpansion
 
 :: msbuild path
-SET vsInstallerRoot=%programfiles(x86)%\Microsoft Visual Studio\Installer
-FOR /f "usebackq tokens=1* delims=: " %%i IN (`"%vsInstallerRoot%\vswhere.exe" -latest -prerelease -requires Microsoft.Component.MSBuild`) DO (
-  IF /i "%%i"=="installationPath" SET vsRoot=%%j
-)
-
-SET MSBuild="%vsRoot%\MSBuild\15.0\Bin\MSBuild.exe"
+SET MSBuild="%programfiles(x86)%\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
 
 :: msbuild params
 SET MSBuildParam=
