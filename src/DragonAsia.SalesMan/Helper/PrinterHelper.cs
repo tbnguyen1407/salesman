@@ -15,8 +15,8 @@ namespace DragonAsia.SalesMan.Helper
 {
     class PrinterHelper
     {
-        private static string printDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/print/";
-        private static string printer = "native\\SumatraPDF.exe";
+        private static readonly string printApp = "native\\SumatraPDF.exe";
+        private static readonly string printDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/print/";
 
         static PrinterHelper()
         {
@@ -30,12 +30,12 @@ namespace DragonAsia.SalesMan.Helper
             {
                 ToPdf(order);
 
-                if (File.Exists(printer))
+                if (File.Exists(printApp))
                 {
                     string filePath = string.Format(@"""{0}/{1}.pdf""", printDir, order.Guid);
                     Process.Start(new ProcessStartInfo
                     {
-                        FileName = printer,
+                        FileName = printApp,
                         Arguments = "-print-to-default " + filePath,
                         CreateNoWindow = true,
                         WindowStyle = ProcessWindowStyle.Hidden
@@ -85,12 +85,12 @@ namespace DragonAsia.SalesMan.Helper
             PdfDocument doc = new PdfDocument();
             doc.Info.Title = string.Format(@"Bestellung #{0}", entity.Guid);
             PdfPage page = doc.AddPage();
-            page.Height = (entity.Items.Count + 17) * lineSize;
+            page.Height = new XUnitPt((entity.Items.Count + 17) * lineSize);
             XGraphics gfx = XGraphics.FromPdfPage(page);
             XTextFormatter tf = new XTextFormatter(gfx);
-            XFont font = new XFont("Consolas", 30, XFontStyle.Regular);
+            XFont font = new XFont("Consolas", 30);
             XBrush brush = XBrushes.Black;
-            XRect rec = new XRect(5, 5, page.Width, page.Height);
+            XRect rec = new XRect(5, 5, page.Width.Point, page.Height.Point);
             XStringFormat format = XStringFormats.TopLeft;
 
             tf.DrawString(content.ToString(), font, brush, rec, format);
