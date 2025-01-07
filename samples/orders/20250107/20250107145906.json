@@ -1,0 +1,51 @@
+{
+  "Guid": "20250107145906",
+  "DeliveryFee": 0.0,
+  "TaxRefIncluded": true,
+  "Timestamp": "2025-01-07T14:59:06.2066014+08:00",
+  "Customer": {
+    "Guid": "0",
+    "Name": "John Doe",
+    "Address": "495 Grove Street #01-04 New York 10014",
+    "Email": "jonhn.doe@example.com",
+    "Phone": "1234-5678"
+  },
+  "Items": [
+    {
+      "Guid": "1",
+      "Code": "A02",
+      "Name": "Minestrone Soup",
+      "Description": "with freshly baked Sourdough",
+      "Category": null,
+      "Price": 6.0,
+      "Quantity": 1
+    },
+    {
+      "Guid": "4",
+      "Code": "P03",
+      "Name": "Homemade beef lasagna",
+      "Description": "layers of Flat Pasta and Beef in rich Tomato Hrd sauce",
+      "Category": null,
+      "Price": 18.0,
+      "Quantity": 1
+    },
+    {
+      "Guid": "7",
+      "Code": "M03",
+      "Name": "Signature Grilled Chicken Chop with King Prawn",
+      "Description": "with brown Onion gravy or Black Pepper sauce",
+      "Category": null,
+      "Price": 18.0,
+      "Quantity": 1
+    },
+    {
+      "Guid": "10",
+      "Code": "D01",
+      "Name": "Waffle with Ben & Jerry's Ice Cream",
+      "Description": "Vanilla Fair / Chocolate Therapy / Strawberry",
+      "Category": null,
+      "Price": 10.0,
+      "Quantity": 2
+    }
+  ]
+}
