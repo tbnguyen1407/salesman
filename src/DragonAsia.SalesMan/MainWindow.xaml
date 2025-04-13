@@ -1,9 +1,0 @@
-﻿<Window x:Class="DragonAsia.SalesMan.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:view="clr-namespace:DragonAsia.SalesMan.View"
-        Title="SalesMan"
-        WindowStartupLocation="CenterScreen" Height="600" Width="1000">
-    
-    <view:MainView />
-</Window>

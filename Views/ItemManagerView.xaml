@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="SalesMan.Views.ItemManagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="TplEntity">
+            <Grid Margin="0 2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 30 0">
+                    <TextBlock Style="{StaticResource Entry1StTextBlockStyle}" Width="35" Text="{Binding Code}" />
+                    <TextBlock Style="{StaticResource Entry2NdTextBlockStyle}" Text="{Binding Name}" />
+                    <TextBlock Style="{StaticResource Entry3RdTextBlockStyle}" Text="{Binding Description, StringFormat=({0})}" />
+                </StackPanel>
+
+                <TextBlock Style="{StaticResource Entry4ThTextBlockStyle}" HorizontalAlignment="Right" Text="{Binding Price, StringFormat=${0}}" />
+            </Grid>
+        </DataTemplate>
+
+        <ControlTemplate x:Key="TplGroupItem" TargetType="GroupItem">
+            <StackPanel>
+                <Grid Margin="0 15 0 5">
+                    <TextBlock Style="{StaticResource GroupHeaderTextBlockStyle}" Text="{Binding Name}" />
+                    <TextBlock Style="{StaticResource GroupItemCountTextBlockStyle}" />
+                </Grid>
+                <Separator Style="{StaticResource GroupHeaderSeparatorStyle}"/>
+                <ItemsPresenter />
+            </StackPanel>
+        </ControlTemplate>
+
+        <CollectionViewSource x:Key="ItemSource" Source="{Binding FilteredEntities}" IsLiveGroupingRequested="True">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Group" />
+            </CollectionViewSource.GroupDescriptions>
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="Name" />
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <!-- header -->
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Menu" />
+        <Separator Style="{StaticResource HeaderSeparatorStyle}" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- entries -->
+            <StackPanel Grid.Column="0">
+                <xctk:WatermarkTextBox Style="{StaticResource SearchTextBoxStyle}" />
+
+                <ListBox Style="{StaticResource ListBoxStyle}"
+                         ItemsSource="{Binding Source={StaticResource ItemSource}}"
+                         ItemTemplate="{StaticResource TplEntity}"
+                         SelectedItem="{Binding Entity}">
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="GroupItem">
+                                    <Setter Property="Template" Value="{StaticResource TplGroupItem}"/>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                </ListBox>
+            </StackPanel>
+
+            <Border Grid.Column="1" Style="{StaticResource VerticalBorderStyle}" />
+
+            <!-- tasks -->
+            <Border Grid.Column="2" Style="{StaticResource TaskBorderStyle}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource PointBorderStyle}" />
+                        <TextBlock Style="{StaticResource TaskTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource HyperlinkStyle}" Command="{Binding AddCommand}">New</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <Separator />
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource PointBorderStyle}" />
+                        <TextBlock Style="{StaticResource TaskTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource HyperlinkStyle}" Command="{Binding ViewCommand}">View</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource PointBorderStyle}" />
+                        <TextBlock Style="{StaticResource TaskTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource HyperlinkStyle}" Command="{Binding EditCommand}">Edit</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource PointBorderStyle}" />
+                        <TextBlock Style="{StaticResource TaskTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource HyperlinkStyle}" Command="{Binding DeleteCommand}">Delete</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,295 @@
+﻿<Application x:Class="SalesMan.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cnv="clr-namespace:SalesMan.Converters"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+    <Application.Resources>
+        <FontFamily x:Key="RegularFont">./fonts/#Inconsolata</FontFamily>
+        <FontFamily x:Key="BoldFont">./fonts/#Inconsolata Bold</FontFamily>
+        <BooleanToVisibilityConverter x:Key="CnvVisibility"/>
+        <cnv:InverseBoolConverter x:Key="CnvInverseBool"/>
+        <cnv:ShortIdConverter x:Key="CnvShortId" />
+        <cnv:EntityActionDialogIsEnabledConverter x:Key="CnvDialogIsEnabled"/>
+        <cnv:EntityActionDialogVisibilityConverter x:Key="CnvDialogVisibility"/>
+
+        <!-- TextBox -->
+        <Style x:Key="TextBoxStyle"
+               TargetType="xctk:WatermarkTextBox">
+            <Setter Property="BorderThickness"
+                    Value="0 0 0 0.5"/>
+            <Setter Property="FontFamily"
+                    Value="{StaticResource RegularFont}"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+            <Setter Property="Height"
+                    Value="26"/>
+            <Setter Property="Padding"
+                    Value="4,0"/>
+            <Setter Property="AutoSelectBehavior"
+                    Value="OnFocus"/>
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+        </Style>
+        <Style x:Key="SearchTextBoxStyle"
+               TargetType="xctk:WatermarkTextBox"
+               BasedOn="{StaticResource TextBoxStyle}">
+            <Setter Property="Text"
+                    Value="{Binding Filter, UpdateSourceTrigger=PropertyChanged}"/>
+            <Setter Property="Watermark"
+                    Value="Search"/>
+        </Style>
+
+        <!-- TextBlock -->
+        <Style x:Key="TextBlockStyle"
+               TargetType="TextBlock">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource RegularFont}"/>
+        </Style>
+        <Style x:Key="TaskTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Margin"
+                    Value="5 2"/>
+        </Style>
+        <Style x:Key="ButtonTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"/>
+        </Style>
+        <Style x:Key="GroupHeaderTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="FontSize"
+                    Value="14"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+        </Style>
+        <Style x:Key="GroupItemCountTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Foreground"
+                    Value="Gray"/>
+            <Setter Property="FontSize"
+                    Value="14"/>
+            <Setter Property="FontStyle"
+                    Value="Italic"/>
+            <Setter Property="Text"
+                    Value="{Binding ItemCount, StringFormat={}{0} entries}"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Right"/>
+        </Style>
+        <Style x:Key="LabelTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Width"
+                    Value="70"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+            <Setter Property="FontWeight"
+                    Value="Bold"/>
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="DockPanel.Dock"
+                    Value="Left"/>
+        </Style>
+        <Style x:Key="HeaderTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="FontSize"
+                    Value="18"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+        </Style>
+        <Style x:Key="DialogHeaderTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+        </Style>
+        <Style x:Key="SubHeaderTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Foreground"
+                    Value="Red"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+        </Style>
+        <Style x:Key="Entry1StTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Foreground"
+                    Value="Gray"/>
+            <Setter Property="Margin"
+                    Value="0 0 10 0"/>
+        </Style>
+        <Style x:Key="Entry2NdTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Margin"
+                    Value="0 0 5 0"/>
+        </Style>
+        <Style x:Key="Entry3RdTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Foreground"
+                    Value="Gray"/>
+        </Style>
+
+        <Style x:Key="Entry4ThTextBlockStyle"
+               TargetType="TextBlock"
+               BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="Foreground"
+                    Value="DarkBlue"/>
+        </Style>
+
+        <!-- separator -->
+        <Style x:Key="HeaderSeparatorStyle"
+               TargetType="Separator">
+            <Setter Property="Margin"
+                    Value="0 0 0 50"/>
+        </Style>
+        <Style x:Key="DialogHeaderSeparatorStyle"
+               TargetType="Separator">
+            <Setter Property="Margin"
+                    Value="5 0 5 30"/>
+        </Style>
+        <Style x:Key="GroupHeaderSeparatorStyle"
+               TargetType="Separator">
+            <Setter Property="Margin"
+                    Value="0 0 0 15"/>
+        </Style>
+
+        <Style x:Key="HyperlinkStyle"
+               TargetType="Hyperlink">
+            <Setter Property="TextDecorations"
+                    Value="{x:Null}"/>
+        </Style>
+
+        <Style x:Key="DatePickerStyle"
+               TargetType="DatePicker">
+            <Setter Property="Margin"
+                    Value="5"/>
+        </Style>
+
+        <Style x:Key="IntegerUpDownStyle"
+               TargetType="xctk:IntegerUpDown">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource RegularFont}"/>
+            <Setter Property="Height"
+                    Value="26"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+        </Style>
+
+        <Style x:Key="ComboBoxStyle"
+               TargetType="ComboBox">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource RegularFont}"/>
+            <Setter Property="Height"
+                    Value="26"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+        </Style>
+
+        <Style x:Key="CheckBoxStyle"
+               TargetType="CheckBox">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource RegularFont}"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+        </Style>
+
+        <Style x:Key="ListBoxStyle"
+               TargetType="ListBox">
+            <Setter Property="Background"
+                    Value="Transparent"/>
+            <Setter Property="BorderThickness"
+                    Value="0"/>
+            <Setter Property="FontFamily"
+                    Value="Segoe UI"/>
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Stretch"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                    Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                    Value="Disabled"/>
+        </Style>
+
+        <!-- Border -->
+        <Style x:Key="PointBorderStyle"
+               TargetType="Border">
+            <Setter Property="Background"
+                    Value="Black"/>
+            <Setter Property="Height"
+                    Value="5"/>
+            <Setter Property="Margin"
+                    Value="0,0,5,0"/>
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+            <Setter Property="Width"
+                    Value="5"/>
+        </Style>
+        <Style x:Key="VerticalBorderStyle"
+               TargetType="Border">
+            <Setter Property="Background"
+                    Value="LightGray"/>
+            <Setter Property="Width"
+                    Value="1"/>
+        </Style>
+        <Style x:Key="TaskBorderStyle"
+               TargetType="Border">
+            <Setter Property="Background"
+                    Value="LightGray"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+            <Setter Property="Padding"
+                    Value="5"/>
+            <Setter Property="VerticalAlignment"
+                    Value="Top"/>
+        </Style>
+        <Style x:Key="ButtonBorderStyle"
+               TargetType="Border">
+            <Setter Property="BorderBrush"
+                    Value="Gray"/>
+            <Setter Property="BorderThickness"
+                    Value="1"/>
+            <Setter Property="Height"
+                    Value="26"/>
+            <Setter Property="Margin"
+                    Value="5"/>
+            <Setter Property="Width"
+                    Value="60"/>
+        </Style>
+        <Style x:Key="DialogBackgroundStyle"
+               TargetType="Border">
+             <Setter Property="Background"
+                     Value="Gray" />
+        </Style>
+        <Style x:Key="DialogBorderStyle"
+               TargetType="Border">
+            <Setter Property="Background"
+                    Value="White"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"/>
+            <Setter Property="Width"
+                    Value="400"/>
+            <Setter Property="Margin"
+                    Value="40 10"/>
+        </Style>
+    </Application.Resources>
+</Application>

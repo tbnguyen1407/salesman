@@ -25,24 +25,22 @@
 
 ### Requirements
 
-- .NET Framework 4.8.1
-- Build Tools for Visual Studio 2019+ (for building)
+- Microsoft .NET SDK 9
 
 ### Build
 
 ```shell
-./compile.bat
+make
 ```
 
 ### Publish
 
 ```shell
-./publish.bat
+make publish
 ```
 
 ## Running
 
 ### Requirements
 
-- .NET Framework 4.8.1
-- SumatraPDF (for printing support, put the executable in `native` folder)
+- Microsoft Windows .NET Runtime 9

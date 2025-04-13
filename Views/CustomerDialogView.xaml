@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SalesMan.Views.CustomerDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d">
+
+    <Border Style="{StaticResource DialogBackgroundStyle}">
+        <Border Style="{StaticResource DialogBorderStyle}">
+            <StackPanel>
+                <DockPanel LastChildFill="True">
+                    <TextBlock Style="{StaticResource LabelTextBlockStyle}" Text="Name" />
+                    <xctk:WatermarkTextBox Style="{StaticResource TextBoxStyle}"
+                                           IsEnabled="{Binding Action, Converter={StaticResource CnvDialogIsEnabled}}"
+                                           Watermark="John Doe"
+                                           Text="{Binding Entity.Name}" />
+                </DockPanel>
+                <DockPanel LastChildFill="True">
+                    <TextBlock Style="{StaticResource LabelTextBlockStyle}" Text="Email" />
+                    <xctk:WatermarkTextBox Style="{StaticResource TextBoxStyle}"
+                                           IsEnabled="{Binding Action, Converter={StaticResource CnvDialogIsEnabled}}"
+                                           Watermark="john.doe@sample.com"
+                                           Text="{Binding Entity.Email}" />
+                </DockPanel>
+                <DockPanel LastChildFill="True">
+                    <TextBlock Style="{StaticResource LabelTextBlockStyle}" Text="Phone" />
+                    <xctk:WatermarkTextBox Style="{StaticResource TextBoxStyle}"
+                                           IsEnabled="{Binding Action, Converter={StaticResource CnvDialogIsEnabled}}"
+                                           Watermark="1234-5678"
+                                           Text="{Binding Entity.Phone}" />
+                </DockPanel>
+                <DockPanel LastChildFill="True">
+                    <TextBlock Style="{StaticResource LabelTextBlockStyle}" Text="Address" />
+                    <xctk:WatermarkTextBox Style="{StaticResource TextBoxStyle}"
+                                           IsEnabled="{Binding Action, Converter={StaticResource CnvDialogIsEnabled}}"
+                                           Watermark="15 Fernvale Lane #14-16 Singapore 797497"
+                                           Text="{Binding Entity.Address}" />
+                </DockPanel>
+
+                <!-- tasks -->
+                <Grid Margin="0 30 0 0">
+                    <Border Style="{StaticResource ButtonBorderStyle}" HorizontalAlignment="Right">
+                        <TextBlock Style="{StaticResource ButtonTextBlockStyle}">
+                            <Hyperlink Style="{StaticResource HyperlinkStyle}" Command="{Binding ConfirmCommand}">Confirm</Hyperlink>
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Border>
+</UserControl>

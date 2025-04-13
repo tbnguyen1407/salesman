@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="SalesMan.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:SalesMan.Views"
+             mc:Ignorable="d">
+
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Menu" Command="{Binding ActivateItemManagerCommand}" />
+                <MenuItem Header="_Customers" Command="{Binding ActivateCustomerManagerCommand}" />
+                <MenuItem Header="_Orders" Command="{Binding ActivateOrderManagerCommand}" />
+            </MenuItem>
+        </Menu>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
+            <Border HorizontalAlignment="Center" Width="800" Background="White" Margin="10" Padding="40">
+                <StackPanel>
+                    <Grid Visibility="{Binding ItemManagerIsActive, Converter={StaticResource CnvVisibility}}">
+                        <local:ItemManagerView DataContext="{Binding VmItemManager}" />
+                    </Grid>
+                    <Grid Visibility="{Binding CustomerManagerIsActive, Converter={StaticResource CnvVisibility}}">
+                        <local:CustomerManagerView DataContext="{Binding VmCustomerManager}" />
+                    </Grid>
+                    <Grid Visibility="{Binding OrderManagerIsActive, Converter={StaticResource CnvVisibility}}">
+                        <local:OrderManagerView DataContext="{Binding VmOrderManager}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
