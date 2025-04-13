@@ -43,4 +43,4 @@ make publish
 
 ### Requirements
 
-- Microsoft Windows .NET Runtime 9
+- Microsoft .NET Desktop Runtime 9
