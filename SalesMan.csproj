@@ -1,24 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- general -->
+  <!-- compile -->
   <PropertyGroup>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <!-- build -->
   <PropertyGroup>
     <AssemblyName>salesman</AssemblyName>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
-    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>false</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <DebugType>embedded</DebugType>
   </PropertyGroup>
 
+  <!-- extra content -->
   <ItemGroup>
     <Content Include="fonts\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
