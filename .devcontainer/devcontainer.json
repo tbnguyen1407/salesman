@@ -10,5 +10,6 @@
         }
     },
     "workspaceFolder": "/workspace",
+    "postCreateCommand": "sudo chown -R vscode:vscode .",
     "workspaceMount": "source=remote-workspace,target=/workspace,type=volume"
 }
