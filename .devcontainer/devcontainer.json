@@ -1,0 +1,14 @@
+{
+    "name": "salesman",
+    "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "davidanson.vscode-markdownlint",
+                "ms-dotnettools.csdevkit"
+            ]
+        }
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=remote-workspace,target=/workspace,type=volume"
+}
