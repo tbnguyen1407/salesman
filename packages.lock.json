@@ -16,9 +16,9 @@
       },
       "GemBox.Pdf": {
         "type": "Direct",
-        "requested": "[2025.4.103, )",
-        "resolved": "2025.4.103",
-        "contentHash": "oc+afJj2iVh8S9xfLCfYWlTzrBinRolYo7JFkk2uovY8LMQ+OwaqUY24ACq5J6JbCOEySE3dqCDMCTgecVopRw==",
+        "requested": "[2025.5.103, )",
+        "resolved": "2025.5.103",
+        "contentHash": "mLX6nndez1rgAua07OziANhi5bilYCPOjlMaUE+BYFz2uu0Esl34bsxEKtWp/zvXuL/j3gMnL06Rf07EGd3rEg==",
         "dependencies": {
           "BouncyCastle.Cryptography": "2.4.0",
           "HarfBuzzSharp": "7.3.0.3",
