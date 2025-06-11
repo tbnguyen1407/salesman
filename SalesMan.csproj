@@ -36,6 +36,6 @@
     <PackageReference Include="Gembox.Pdf" Version="2025.5.103" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
     <PackageReference Include="Scriban" Version="6.2.1" />
-    <PackageReference Include="System.Text.Json" Version="9.0.5" />
+    <PackageReference Include="System.Text.Json" Version="9.0.6" />
   </ItemGroup>
 </Project>
