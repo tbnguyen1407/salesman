@@ -16,9 +16,9 @@
       },
       "GemBox.Pdf": {
         "type": "Direct",
-        "requested": "[2025.5.103, )",
-        "resolved": "2025.5.103",
-        "contentHash": "mLX6nndez1rgAua07OziANhi5bilYCPOjlMaUE+BYFz2uu0Esl34bsxEKtWp/zvXuL/j3gMnL06Rf07EGd3rEg==",
+        "requested": "[2025.7.100, )",
+        "resolved": "2025.7.100",
+        "contentHash": "IJ5KcK5kDOlaYJksCHXQIR+x7BjssPoQ6rNpzkEQuovzFBCXbD7qD4CS0cDa9HSH3aoRh8crfkeFJY4fuZECtg==",
         "dependencies": {
           "BouncyCastle.Cryptography": "2.4.0",
           "HarfBuzzSharp": "7.3.0.3",
@@ -26,6 +26,7 @@
           "SkiaSharp": "2.88.9",
           "System.Buffers": "4.6.0",
           "System.Drawing.Common": "6.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "6.1.0",
           "System.Text.Encoding.CodePages": "6.0.0"
         }
       },
@@ -40,9 +41,9 @@
       },
       "Microsoft.NET.ILLink.Tasks": {
         "type": "Direct",
-        "requested": "[9.0.5, )",
-        "resolved": "9.0.5",
-        "contentHash": "4L7wbb3Y4BJgIeSnmAf/C6S/qCs9rT1b0dX72uj3qo0qvUH7D0U1tU5ZlC7A3Wb8E/dXK4caOi4JkdLTVJaXhw=="
+        "requested": "[9.0.6, )",
+        "resolved": "9.0.6",
+        "contentHash": "TXy3SbJzGXQbxxIxCjdrp8bwEyTDImyYNpTpd6v7P3JL2Y7dno8EYG7dPezfYTa5SoWKdhbH9cbnwHHs3BR5gA=="
       },
       "Scriban": {
         "type": "Direct",
@@ -129,8 +130,8 @@
       },
       "System.Runtime.CompilerServices.Unsafe": {
         "type": "Transitive",
-        "resolved": "6.0.0",
-        "contentHash": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg=="
+        "resolved": "6.1.0",
+        "contentHash": "5o/HZxx6RVqYlhKSq8/zronDkALJZUT2Vz0hx43f0gwe8mwlM0y2nYlqdBwLMzr262Bwvpikeb/yEwkAa5PADg=="
       },
       "System.Text.Encoding.CodePages": {
         "type": "Transitive",
