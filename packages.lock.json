@@ -10,9 +10,9 @@
       },
       "Extended.Wpf.Toolkit": {
         "type": "Direct",
-        "requested": "[4.7.25104.5739, )",
-        "resolved": "4.7.25104.5739",
-        "contentHash": "x6fCMLeExVZjyPl6f9/NRITW4uzT3xBZA40CBWA9YlH4/w6rKzsIeTDwYvavdmJLrl43p0LIFSQChISCnTSR6Q=="
+        "requested": "[5.0.0, )",
+        "resolved": "5.0.0",
+        "contentHash": "8QStq5cQd+anGBbA5XXSlb/BxEk457xRQ/vraLXNvf5fHG1b4Bu4DOkvSqvvu9MLRUf+q29ceWsLRGtAw3CzDg=="
       },
       "GemBox.Pdf": {
         "type": "Direct",
