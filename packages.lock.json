@@ -41,15 +41,15 @@
       },
       "Microsoft.NET.ILLink.Tasks": {
         "type": "Direct",
-        "requested": "[9.0.12, )",
-        "resolved": "9.0.12",
-        "contentHash": "StA3kyImQHqDo8A8ZHaSxgASbEuT5UIqgeCvK5SzUPj//xE1QSys421J9pEs4cYuIVwq7CJvWSKxtyH7aPr1LA=="
+        "requested": "[9.0.13, )",
+        "resolved": "9.0.13",
+        "contentHash": "f7t15I9ZXV7fNk3FIzPAlkJNG1A1tkSeDpRh+TFWEToGGqA+uj6uqU15I8YOkkYICNY2tqOVm2CMe6ScPFPwEg=="
       },
       "Scriban": {
         "type": "Direct",
-        "requested": "[6.5.2, )",
-        "resolved": "6.5.2",
-        "contentHash": "JXli/Sh1WVZs/pqnPPRJTlwEsZHPJtndzxiaPnrteXDpAqVqHxh4ifhx4puTaYKVMPJUMOp9bnCpEVBpYlt/eQ=="
+        "requested": "[6.5.3, )",
+        "resolved": "6.5.3",
+        "contentHash": "0WuO/muuPnxn6OKR3cJeTJD/AiACsCz+lOh5k5bfZdZFPKVQ/4TIWd1VSJdiFbr7iyHBLbHpsF0WVWqu67KlUw=="
       },
       "System.Text.Json": {
         "type": "Direct",
