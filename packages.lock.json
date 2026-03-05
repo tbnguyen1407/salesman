@@ -39,13 +39,13 @@
         "type": "Direct",
         "requested": "[10.0.3, )",
         "resolved": "10.0.3",
-        "contentHash": "v0fdsiZ6fB3n29xY0CHFfYC3mpLW9Jmtwm8rICfL51gxlmxxMAE/KVf0ddx5TeewFxK34vGhnJLVFDNwptLt7A=="
+        "contentHash": "0B6nZyCHWXnvmlB559oduOspVdNOnpNXPjhpWVMovLPAsDVG7A4jJR9rzECf67JUzxP8/ee/wA8clwIzJcWNFA=="
       },
       "Scriban": {
         "type": "Direct",
-        "requested": "[6.5.4, )",
-        "resolved": "6.5.4",
-        "contentHash": "TiNtBPHjDz7GsABO79EZGkG36QCvsdfRe9v9B+Px9wPbxCdHGczoPoEiBfFNaTTcpHLBKwsf3x8TTY0NKUdM5g=="
+        "requested": "[6.5.5, )",
+        "resolved": "6.5.5",
+        "contentHash": "TxsmDVQ9agPQaY+SvdTO+zntGpJOnL1QaO4dzACfc6gEKRYhoMpzCCFuVixEZXet291sRnjyym6lB69Cr/EXPQ=="
       },
       "BouncyCastle.Cryptography": {
         "type": "Transitive",
