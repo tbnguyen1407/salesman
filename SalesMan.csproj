@@ -2,7 +2,7 @@
 
   <!-- compile -->
   <PropertyGroup>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
@@ -36,6 +36,5 @@
     <PackageReference Include="Gembox.Pdf" Version="2026.3.102" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
     <PackageReference Include="Scriban" Version="6.5.4" />
-    <PackageReference Include="System.Text.Json" Version="10.0.3" />
   </ItemGroup>
 </Project>

@@ -25,7 +25,7 @@
 
 ### Requirements
 
-- Microsoft .NET SDK 9
+- Microsoft .NET SDK 10
 
 ### Build
 
