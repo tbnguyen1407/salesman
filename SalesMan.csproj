@@ -35,6 +35,6 @@
     <PackageReference Include="Extended.Wpf.Toolkit" Version="5.0.0" />
     <PackageReference Include="Gembox.Pdf" Version="2026.3.102" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
-    <PackageReference Include="Scriban" Version="6.5.7" />
+    <PackageReference Include="Scriban" Version="6.5.8" />
   </ItemGroup>
 </Project>
