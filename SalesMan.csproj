@@ -33,7 +33,7 @@
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Extended.Wpf.Toolkit" Version="5.0.0" />
-    <PackageReference Include="Gembox.Pdf" Version="2026.4.102" />
+    <PackageReference Include="Gembox.Pdf" Version="2026.4.112" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
     <PackageReference Include="Scriban" Version="7.1.0" />
   </ItemGroup>
