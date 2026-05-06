@@ -16,9 +16,9 @@
       },
       "GemBox.Pdf": {
         "type": "Direct",
-        "requested": "[2026.4.102, )",
-        "resolved": "2026.4.102",
-        "contentHash": "jBsnK2sfpl8/oVK6kcUGmfq49F9ZfxjDKUZ8CioSNnqfsjU/SBXu4Qzzu9sMjlyt/dVD+u67WFhy/0ySeTJlwQ==",
+        "requested": "[2026.5.102, )",
+        "resolved": "2026.5.102",
+        "contentHash": "xRWkqFlvXuNgvwKVnz14Hv79s+7mkexZynAkHgZs8p1xuCh8VzTrDl2RyY3rlDuCNprnVCGLD2g25aKLqbUvGw==",
         "dependencies": {
           "BouncyCastle.Cryptography": "2.4.0",
           "HarfBuzzSharp": "7.3.0.3",
@@ -37,9 +37,9 @@
       },
       "Microsoft.NET.ILLink.Tasks": {
         "type": "Direct",
-        "requested": "[10.0.5, )",
-        "resolved": "10.0.5",
-        "contentHash": "A+5ZuQ0f449tM+MQrhf6R9ZX7lYpjk/ODEwLYKrnF6111rtARx8fVsm4YznUnQiKnnXfaXNBqgxmil6RW3L3SA=="
+        "requested": "[10.0.7, )",
+        "resolved": "10.0.7",
+        "contentHash": "AA/yhzFHNtQZXLdqjzujPy25G8EWwGWsAnxOE2zYSBoT/8QHP6ketN3CToD3DFreO653ipUwnKHo22B8AlBMCw=="
       },
       "Scriban": {
         "type": "Direct",
