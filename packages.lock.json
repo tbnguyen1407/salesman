@@ -43,9 +43,9 @@
       },
       "Scriban": {
         "type": "Direct",
-        "requested": "[7.2.2, )",
-        "resolved": "7.2.2",
-        "contentHash": "8qYvR1PxjYtTgAKFyJ2W57DEF3uQcpL7NjkciQuuDnxVxLcSgx+ozBveg7AIJcr7nHETI472g8GVSl6LsYaFyQ=="
+        "requested": "[7.2.5, )",
+        "resolved": "7.2.5",
+        "contentHash": "6HDyv0P6PVdx/prWM3Aw0QHAT/DCpkBxOovZ2iPIH4L4ZvJ13JNYJgyUI+xJ5K2agXreYTBe23AL5ZQNTqJQvA=="
       },
       "BouncyCastle.Cryptography": {
         "type": "Transitive",
