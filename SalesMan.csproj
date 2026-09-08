@@ -34,7 +34,7 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Extended.Wpf.Toolkit" Version="5.1.2" />
     <PackageReference Include="Gembox.Pdf" Version="2026.8.107" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.12" />
     <PackageReference Include="Scriban" Version="7.4.0" />
   </ItemGroup>
 </Project>
