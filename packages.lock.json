@@ -16,11 +16,11 @@
       },
       "GemBox.Pdf": {
         "type": "Direct",
-        "requested": "[2026.8.107, )",
-        "resolved": "2026.8.107",
-        "contentHash": "S/FOE4FrlPq6Sa06awwhLFTnYx7zQfURXa+OE3LaFeypLjk81/klzmSa9a0Kkm0nxYkdEgtSnC0WSjeuuTzLOA==",
+        "requested": "[2026.11.102, )",
+        "resolved": "2026.11.102",
+        "contentHash": "4yYs8ZUrn175mnLos7DZwVSWR/6PBwEzx1BgK3aacTJrL5YmvSUnTWIF6q880WySKNuazqRLAVp5vYVL4670yw==",
         "dependencies": {
-          "BouncyCastle.Cryptography": "2.4.0",
+          "BouncyCastle.Cryptography": "2.7.0",
           "HarfBuzzSharp": "14.2.1.1",
           "Pkcs11Interop": "5.1.1",
           "SkiaSharp": "4.151.0"
@@ -37,9 +37,9 @@
       },
       "Microsoft.NET.ILLink.Tasks": {
         "type": "Direct",
-        "requested": "[10.0.11, )",
-        "resolved": "10.0.11",
-        "contentHash": "IBf7lbovvjGWVWXZX5cJ/cO0WXbId0Zq4BuSeT94mGZuOAP66oMeH9PTBZ9Jpp3Jb6jtK0qm/NyUbPRo1gC/wQ=="
+        "requested": "[10.0.14, )",
+        "resolved": "10.0.14",
+        "contentHash": "YlTamXppEQls6DYWt7RdUuwWDb0lyw/vXCaGeQpLCpsLmfwGuCkOz/vIGgMTV7ECsJcavkCOkxZXv9s8rdAHkQ=="
       },
       "Scriban": {
         "type": "Direct",
@@ -49,8 +49,8 @@
       },
       "BouncyCastle.Cryptography": {
         "type": "Transitive",
-        "resolved": "2.4.0",
-        "contentHash": "SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ=="
+        "resolved": "2.7.0",
+        "contentHash": "U+12df8UEWHgBi04YVf/Lgi2dy3SItlIYvHjjEVa/BngCQIzDCDRBk50DDByCfDvSbe5pRNFr3b7UrVK2kMcLw=="
       },
       "HarfBuzzSharp": {
         "type": "Transitive",
